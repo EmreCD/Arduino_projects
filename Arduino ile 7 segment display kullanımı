@@ -1,0 +1,20 @@
+void setup() {
+  // BURADAKİ LED HARFLERİ SİZİN ARDUİNO BAĞLANTINIZA GÖRE DEĞİŞECEKTİR. TEK TEK HIGH VE LOW KOMUDU KULLANARAK LEDLERİ BULUNUZ.
+    pinMode(3, OUTPUT);  //E LEDİ
+    pinMode(5, OUTPUT);  //D LEDİ
+    pinMode(6, OUTPUT);  //C LEDİ
+    pinMode(7, OUTPUT);  //G LEDİ
+    pinMode(8, OUTPUT);  //F LEDİ
+    pinMode(9, OUTPUT);  //A LEDİ
+    pinMode(10, OUTPUT); //B LEDİ
+}
+
+void loop() {
+  digitalWrite(3, LOW);
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+  digitalWrite(10, HIGH);
+}
