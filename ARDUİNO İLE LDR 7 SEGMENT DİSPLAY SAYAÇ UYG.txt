@@ -1,0 +1,160 @@
+int a=2;
+int b=3;
+int c=4;
+int d=5;
+int e=6;
+int f=7;
+int g=8;
+int kirmizi=9;
+int yesil=10;
+int mavi=11;
+int ldr=12;
+int sayac=0;
+
+int ldrdurum;
+
+void setup() {
+  // BURADAKİ LED HARFLERİ SİZİN ARDUİNO BAĞLANTINIZA GÖRE DEĞİŞECEKTİR. TEK TEK HIGH VE LOW KOMUDU KULLANARAK LEDLERİ BULUNUZ.
+    pinMode(a, OUTPUT);  //E LEDİ
+    pinMode(b, OUTPUT);  //D LEDİ
+    pinMode(c, OUTPUT);  //C LEDİ
+    pinMode(d, OUTPUT);  //G LEDİ
+    pinMode(e, OUTPUT);  //F LEDİ
+    pinMode(f, OUTPUT);  //A LEDİ
+    pinMode(g, OUTPUT); //B LEDİ
+    pinMode(kirmizi, OUTPUT);
+    pinMode(yesil, OUTPUT);
+    pinMode(mavi, OUTPUT);
+    pinMode(ldr, INPUT);
+    Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(a, HIGH);
+  digitalWrite(b, HIGH);
+  digitalWrite(c, HIGH);
+  digitalWrite(d, HIGH);
+  digitalWrite(e, HIGH);
+  digitalWrite(f, HIGH);
+  digitalWrite(g, HIGH);
+  ldrdurum=digitalRead(ldr);
+  Serial.println(ldrdurum);
+  if(ldrdurum==1)
+  {
+    sayac++;
+  }
+  if(sayac/10==1){
+    digitalWrite(kirmizi, HIGH);
+   
+  }
+  else if(sayac/10==2){
+    digitalWrite(yesil, HIGH);
+    
+  }
+   else if(sayac/10==3){
+    digitalWrite(mavi, HIGH);
+    
+  }
+  switch(sayac%10){
+  case 0: 
+    digitalWrite(a, LOW);
+    digitalWrite(b, LOW);
+    digitalWrite(c, LOW);
+    digitalWrite(d, LOW);
+    digitalWrite(e, LOW);
+    digitalWrite(f, LOW);
+    digitalWrite(g, HIGH);
+    break;
+  case 1: 
+    digitalWrite(a, HIGH);
+    digitalWrite(b, LOW);
+    digitalWrite(c, LOW);
+    digitalWrite(d, HIGH);
+    digitalWrite(e, HIGH);
+    digitalWrite(f, HIGH);
+    digitalWrite(g, HIGH);
+    break;
+  case 2: 
+    digitalWrite(a, LOW);
+    digitalWrite(b, LOW);
+    digitalWrite(c, HIGH);
+    digitalWrite(d, LOW);
+    digitalWrite(e, LOW);
+    digitalWrite(f, HIGH);
+    digitalWrite(g, LOW);
+    break;
+  case 3: 
+    digitalWrite(a, LOW);
+    digitalWrite(b, LOW);
+    digitalWrite(c, LOW);
+    digitalWrite(d, LOW);
+    digitalWrite(e, HIGH);
+    digitalWrite(f, HIGH);
+    digitalWrite(g, LOW);
+    break;
+  case 4: 
+    digitalWrite(a, HIGH);
+    digitalWrite(b, LOW);
+    digitalWrite(c, LOW);
+    digitalWrite(d, HIGH);
+    digitalWrite(e, HIGH);
+    digitalWrite(f, LOW);
+    digitalWrite(g, LOW);
+    break;
+  case 5: 
+    digitalWrite(a, LOW);
+    digitalWrite(b, HIGH);
+    digitalWrite(c, LOW);
+    digitalWrite(d, LOW);
+    digitalWrite(e, HIGH);
+    digitalWrite(f, LOW);
+    digitalWrite(g, LOW);
+    break;
+  case 6: 
+  digitalWrite(a, LOW);
+  digitalWrite(b, HIGH);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+  break;
+  case 7: 
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, HIGH);
+  digitalWrite(e, HIGH);
+  digitalWrite(f, HIGH);
+  digitalWrite(g, HIGH);
+  break;
+  case 8: 
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, LOW);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+  break;
+  case 9: 
+  digitalWrite(a, LOW);
+  digitalWrite(b, LOW);
+  digitalWrite(c, LOW);
+  digitalWrite(d, LOW);
+  digitalWrite(e, HIGH);
+  digitalWrite(f, LOW);
+  digitalWrite(g, LOW);
+  break;
+  default:
+  digitalWrite(a, HIGH);
+  digitalWrite(b, HIGH);
+  digitalWrite(c, HIGH);
+  digitalWrite(d, HIGH);
+  digitalWrite(e, HIGH);
+  digitalWrite(f, HIGH);
+  digitalWrite(g, HIGH);
+  break;
+}
+delay(300);
+}
